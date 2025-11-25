@@ -15,35 +15,27 @@ Description: Silly Story Generator HTML page for Assignment 4.
 <head>
     <meta charset="utf-8">
     <title>Silly Story Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    <div style="font-family: Arial, Helvetica, sans-serif; width: 350px; margin: 40px auto; font-size: 18px;">
+    <div>
+  <label for="custom-name">Enter custom name:</label>
+  <input id="custom-name" type="text" placeholder="" />
+</div>
+<fieldset>
+  <legend>Choose locale:</legend>
+  <label for="us">US</label
+  ><input id="us" type="radio" name="uk-us" value="us" checked />
+  <label for="uk">UK</label
+  ><input id="uk" type="radio" name="uk-us" value="uk" />
+</fieldset>
+<div>
+  <button class="generate">Generate random story</button>
+</div>
+<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+<p class="story"></p>
 
-        <label for="customname">Enter custom name:</label>
-        <input id="customname" type="text" style="width: 100%; padding: 8px; font-size: 16px; margin-bottom: 30px;">
-
-        <h3 style="margin-bottom: 10px;">Choose locale:</h3>
-
-        <div style="display: flex; gap: 20px; font-size: 20px; margin-bottom: 30px;">
-            <label>
-                <input type="radio" name="locale" id="us" checked>
-                US
-            </label>
-
-            <label>
-                <input type="radio" name="locale" id="uk">
-                UK
-            </label>
-        </div>
-
-        <button class="randomize" style="padding: 10px 20px; font-size: 16px; margin-bottom: 20px;">
-            Generate random story
-        </button>
-
-        <p class="story" style="background: #eee; padding: 10px; border-radius: 5px; visibility: hidden;"></p>
-
-    </div>
 
     <script src="script.js"></script>
 
