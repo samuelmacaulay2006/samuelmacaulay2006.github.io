@@ -161,8 +161,8 @@ ballCount = balls.length;
 
 // EvilCircle instance
 const evilCircle = new EvilCircle(
-  random(0, width),
-  random(0, height)
+  random(5, width),
+  random(5, height)
 );
 
 // Get ball count paragraph element
