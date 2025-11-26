@@ -4,7 +4,7 @@ const thumbBar = document.querySelector(".thumb-bar");
 const btn = document.querySelector("button");
 const overlay = document.querySelector(".overlay");
 
-//Create a data object
+// Solution: Create a data object
 
 const images = [
   { filename: "pic1.jpg", alt: "Closeup of a human eye" },
@@ -14,7 +14,7 @@ const images = [
   { filename: "pic5.jpg", alt: "Large moth on a leaf" },
 ];
 
-//  Loop through the images
+// Solution: Loop through the images
 
 // Create a baseURL constant containing the baseURL of the images
 const baseURL =
@@ -42,14 +42,14 @@ for (const image of images) {
   });
 }
 
-// Create the updateDisplayedImage() function
+// Solution: Create the updateDisplayedImage() function
 
 function updateDisplayedImage(e) {
   displayedImage.src = e.target.src;
   displayedImage.alt = e.target.alt;
 }
 
-//  Wire up the Darken/Lighten button
+// Solution: Wire up the Darken/Lighten button
 
 // Add a click event listener on the button
 btn.addEventListener("click", () => {
