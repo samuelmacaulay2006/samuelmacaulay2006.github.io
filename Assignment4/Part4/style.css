@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+p {
+  position: absolute;
+  margin: 0;
+  top: 35px;
+  right: 10px;
+  color: #aaa;
+  font-size: 1.1em;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: #000;
+  border: 1px solid #444;
+}
