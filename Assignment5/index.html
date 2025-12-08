@@ -5,3 +5,97 @@ Date:  2025-12-08
 Description: This wildlife website page  
 -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accessibility troubleshooting — starter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <h1>Accessibility troubleshooting — starter</h1>
+    <p class="tagline">A small demo page used to learn accessibility debugging.</p>
+  </header>
+
+  <nav role="navigation" aria-label="Primary">
+    <ul>
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#form">Feedback form</a></li>
+      <li><a href="#media">Media</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" tabindex="-1" role="main">
+    <section id="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Introduction</h2>
+      <p>
+        This small demo contains deliberately simple markup so you can practice
+        finding and fixing accessibility issues using tools like a screen reader,
+        browser devtools, or accessibility linters.
+      </p>
+    </section>
+
+    <section id="form" aria-labelledby="form-heading">
+      <h2 id="form-heading">Feedback form</h2>
+
+      <form id="feedback-form" novalidate>
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-row">
+          <fieldset>
+            <legend>How did you hear about us?</legend>
+            <label><input type="radio" name="source" value="search" /> Search engine</label>
+            <label><input type="radio" name="source" value="friend" /> Friend</label>
+            <label><input type="radio" name="source" value="other" /> Other</label>
+          </fieldset>
+        </div>
+
+        <div class="form-row">
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" rows="5" placeholder="Tell us what you think"></textarea>
+        </div>
+
+        <div class="form-row">
+          <button id="submit" type="submit">Send feedback</button>
+          <button id="clear" type="button">Clear</button>
+        </div>
+
+        <div id="form-status" aria-live="polite" class="sr-only"></div>
+      </form>
+    </section>
+
+    <section id="media" aria-labelledby="media-heading">
+      <h2 id="media-heading">Multimedia example</h2>
+      <p>Below is a simple image and audio example. Check alt text and captions.</p>
+
+      <figure>
+        <img src="placeholder-image.jpg" alt="A simple placeholder scene" width="400" />
+        <figcaption>Figure: placeholder illustration for the tutorial.</figcaption>
+      </figure>
+
+      <audio controls aria-label="Sample audio">
+        <source src="sample-audio.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Demo page for accessibility exercises. No personal data is stored.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
