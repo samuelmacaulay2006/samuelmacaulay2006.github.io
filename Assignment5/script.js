@@ -5,49 +5,50 @@ Date: 2025-12-08
 A very brief description: Minimal JavaScript for the starter accessibility demo.
 */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('feedback-form');
-  const status = document.getElementById('form-status');
-  const clearBtn = document.getElementById('clear');
+// functionality for showing/hiding the comments section
 
-  // Simple client-side validation and accessible status messages
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    status.classList.remove('sr-only');
-    status.textContent = '';
+const showHideBtn = document.querySelector('.show-hide');
+const commentWrapper = document.querySelector('.comment-wrapper');
 
-    const name = form.elements['name'].value.trim();
-    const email = form.elements['email'].value.trim();
-    const comments = form.elements['comments'].value.trim();
+commentWrapper.style.display = 'none';
 
-    const problems = [];
-    if (!name) problems.push('Please enter your name.');
-    if (!email) problems.push('Please enter your email address.');
-    if (!comments) problems.push('Please enter some comments.');
+showHideBtn.onclick = function() {
+  let showHideText = showHideBtn.textContent;
+  if(showHideText === 'Show comments') {
+    showHideBtn.textContent = 'Hide comments';
+    commentWrapper.style.display = 'block';
+  } else {
+    showHideBtn.textContent = 'Show comments';
+    commentWrapper.style.display = 'none';
+  }
+};
 
-    if (problems.length) {
-      // announce the first problem to assistive tech
-      status.textContent = problems.join(' ');
-      status.setAttribute('role', 'status');
-      status.setAttribute('aria-atomic', 'true');
-      status.classList.remove('sr-only');
-      status.focus?.();
-      return;
-    }
+// functionality for adding a new comment via the comments form
 
-    // Simulate successful submission (no network call)
-    status.textContent = 'Thanks — your feedback has been recorded.';
-    status.setAttribute('role', 'status');
-    status.setAttribute('aria-atomic', 'true');
-    status.classList.remove('sr-only');
+const form = document.querySelector('.comment-form');
+const nameField = document.querySelector('#name');
+const commentField = document.querySelector('#comment');
+const list = document.querySelector('.comment-container');
 
-    // clear fields after successful submit
-    form.reset();
-  });
+form.onsubmit = function(e) {
+  e.preventDefault();
+  submitComment();
+};
 
-  clearBtn.addEventListener('click', function () {
-    form.reset();
-    status.textContent = 'Form cleared.';
-    status.classList.remove('sr-only');
-  });
-});
+function submitComment() {
+  const listItem = document.createElement('li');
+  const namePara = document.createElement('p');
+  const commentPara = document.createElement('p');
+  const nameValue = nameField.value;
+  const commentValue = commentField.value;
+
+  namePara.textContent = nameValue;
+  commentPara.textContent = commentValue;
+
+  list.appendChild(listItem);
+  listItem.appendChild(namePara);
+  listItem.appendChild(commentPara);
+
+  nameField.value = '';
+  commentField.value = '';
+}
