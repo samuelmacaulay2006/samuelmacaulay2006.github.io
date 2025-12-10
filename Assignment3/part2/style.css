@@ -7,30 +7,104 @@
 
 body {
   margin: 0 auto;
-  padding: 0 20px;
-  min-width: 980px;
+  min-width: 1000px;
   max-width: 1400px;
 }
 
 /* Layout */
 
-main {
-  display: grid;
-  grid-template-columns: 5fr 2fr 2fr;
-  gap: 40px;
-  padding: 20px 0;
+section {
+  float: left;
+  width: 50%;
 }
 
-/* header and footer */
+aside {
+  float: left;
+  width: 30%;
+}
 
-header {
-  border-bottom: 5px solid #aa6666;
+nav {
+  float: left;
+  width: 20%;
 }
 
 footer {
-  border-top: 5px solid #aa6666;
+  clear: both;
 }
 
-footer p {
+header,
+section,
+aside,
+nav,
+footer {
+  padding: 20px;
+}
+
+/* Header and footer styling */
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* Typography */
+
+h1,
+h2 {
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 2.5em;
   text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p,
+li {
+  font-family: Georgia, serif;
+  line-height: 1.5;
+  font-size: 1.1em;
+}
+
+/* Link styling */
+
+a:link,
+a:visited {
+  color: #a66;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Navigation buttons */
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 20px;
+}
+
+nav a {
+  display: block;
+  border: 2px solid #a66;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #a66;
+  color: white;
 }
