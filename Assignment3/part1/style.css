@@ -1,7 +1,35 @@
-html {
-  background-color: white;
+/*
+	Name: Samuel MAcaulay
+	File: style.css
+	Date: 2025-12-10
+	This is the css code for Jane Doe.
+*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  font: 1.2em / 1.5 system-ui;
+h1 {
+  color: rgb(47, 81, 47);
+  font-size: 2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-bottom: 10px dotted purple;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+.job-title {
+  color: #999999;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: #fb6542;
+}
+
+a:hover {
+  text-decoration: none;
 }
